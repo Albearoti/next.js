@@ -1150,5 +1150,16 @@
   "1149": "Node.js Readable cannot be teed in the edge runtime",
   "1150": "Node.js Readable cannot be converted to a web stream in the edge runtime",
   "1151": "%s is being parsed as a normalized route, but it has a route group segment.",
-  "1152": "%s is being parsed as a normalized route, but it has a parallel route segment."
+  "1152": "%s is being parsed as a normalized route, but it has a parallel route segment.",
+  "1153": "Worker pool is ending, no more calls can be made",
+  "1154": "Worker exited with code %s%s",
+  "1155": "This file must be run as a worker thread",
+  "1156": "Worker pool closed",
+  "1157": "Child can only be used on a forked process",
+  "1158": "Error when calling setup: %s",
+  "1159": "Worker pool ended before task could be processed",
+  "1160": "\"null\" or \"undefined\" thrown",
+  "1161": "Unexpected request from parent process: %s",
+  "1162": "Worker exited unexpectedly with code %s, signal %s",
+  "1163": "Worker restarted due to timeout"
 }
