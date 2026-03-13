@@ -16,7 +16,6 @@ import http from 'http'
 import https from 'https'
 import os from 'os'
 import { exec } from 'child_process'
-import Watchpack from 'next/dist/compiled/watchpack'
 import * as Log from '../../build/output/log'
 import setupDebug from 'next/dist/compiled/debug'
 import { RESTART_EXIT_CODE } from './utils'
@@ -529,6 +528,8 @@ export async function startServer(
       dirToWatch: string,
       onChange: (filename: string) => void
     ) {
+      const Watchpack =
+        require('next/dist/compiled/watchpack') as typeof import('next/dist/compiled/watchpack').default
       const wp = new Watchpack()
       wp.watch({
         files: CONFIG_FILES.map((file) => path.join(dirToWatch, file)),
