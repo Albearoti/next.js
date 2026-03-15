@@ -70,7 +70,7 @@ describe.each([['', '/docs']])(
               statusEl.id = 'status'
               document.querySelector('body').appendChild(statusEl)
   
-              const ws = new WebSocket("${next.url}/_next/webpack-hmr")
+              const ws = new WebSocket("${next.url}/_next/hmr")
               
               ws.addEventListener('error', (err) => {
                 statusEl.innerText = 'error'
@@ -230,7 +230,7 @@ describe.each([['', '/docs']])(
               statusEl.id = 'status'
               document.querySelector('body').appendChild(statusEl)
   
-              const ws = new WebSocket("${next.url}/_next/webpack-hmr")
+              const ws = new WebSocket("${next.url}/_next/hmr")
               
               ws.addEventListener('error', (err) => {
                 statusEl.innerText = 'error'
