@@ -1167,5 +1167,9 @@
   "1166": "Worker pool ended while requests were in-flight",
   "1167": "Worker is ended, no more calls can be done to it",
   "1168": "Export encountered an error on %s, exiting the build.",
-  "1169": "Worker timed out"
+  "1169": "Worker timed out",
+  "1170": "Worker module exports a non-function \"setup\": %s",
+  "1171": "Worker default export is not a function: %s",
+  "1172": "Worker has no own export named \"%s\"",
+  "1173": "Worker export \"%s\" is not a function: %s"
 }
