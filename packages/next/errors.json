@@ -1152,5 +1152,11 @@
   "1151": "%s is being parsed as a normalized route, but it has a route group segment.",
   "1152": "%s is being parsed as a normalized route, but it has a parallel route segment.",
   "1153": "WASM instance %s not found",
-  "1154": "WASM module %s not found"
+  "1154": "WASM module %s not found",
+  "1155": "Unexpected optype: %s",
+  "1156": "Module %s not found",
+  "1157": "No active instance for memory operation",
+  "1158": "Unknown request type: %s",
+  "1159": "Instance %s not found",
+  "1160": "wasm-worker must be run as a worker thread"
 }
