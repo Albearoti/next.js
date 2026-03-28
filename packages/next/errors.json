@@ -1150,5 +1150,6 @@
   "1149": "Node.js Readable cannot be teed in the edge runtime",
   "1150": "Node.js Readable cannot be converted to a web stream in the edge runtime",
   "1151": "%s is being parsed as a normalized route, but it has a route group segment.",
-  "1152": "%s is being parsed as a normalized route, but it has a parallel route segment."
+  "1152": "%s is being parsed as a normalized route, but it has a parallel route segment.",
+  "1153": "Daemon exited early with code %s"
 }
