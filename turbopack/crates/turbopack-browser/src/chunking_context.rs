@@ -224,6 +224,11 @@ impl BrowserChunkingContextBuilder {
         self
     }
 
+    pub fn esm_chunks(mut self, esm_chunks: bool) -> Self {
+        self.chunking_context.esm_chunks = esm_chunks;
+        self
+    }
+
     pub fn build(self) -> Vc<BrowserChunkingContext> {
         BrowserChunkingContext::cell(self.chunking_context)
     }
@@ -322,6 +327,10 @@ pub struct BrowserChunkingContext {
     chunk_loading_global: Option<RcStr>,
     /// Salt mixed into chunk and asset content hashes. Empty string means no salt.
     hash_salt: ResolvedVc<RcStr>,
+    /// Emit chunks as ES modules (`export default [factories...]`) instead of
+    /// `globalThis["TURBOPACK"].push([...])`. The runtime loads them via `import()`.
+    /// Requires `current_chunk_method` to be set to `ImportMetaUrl` when used.
+    esm_chunks: bool,
 }
 
 impl BrowserChunkingContext {
@@ -375,6 +384,7 @@ impl BrowserChunkingContext {
                 worker_forwarded_globals: vec![],
                 chunk_loading_global: Default::default(),
                 hash_salt: ResolvedVc::cell(RcStr::default()),
+                esm_chunks: false,
             },
         }
     }
@@ -503,6 +513,12 @@ impl BrowserChunkingContext {
                 .clone()
                 .unwrap_or_else(|| rcstr!("TURBOPACK")),
         )
+    }
+
+    /// Returns whether chunks are emitted as ES modules.
+    #[turbo_tasks::function]
+    pub fn esm_chunks(&self) -> Vc<bool> {
+        Vc::cell(self.esm_chunks)
     }
 }
 
