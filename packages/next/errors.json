@@ -1152,5 +1152,7 @@
   "1151": "%s is being parsed as a normalized route, but it has a route group segment.",
   "1152": "%s is being parsed as a normalized route, but it has a parallel route segment.",
   "1153": "Daemon exited early with code %s",
-  "1154": "Turbopack daemon is not supported on this platform because native bindings are not available."
+  "1154": "Turbopack daemon is not supported on this platform because native bindings are not available.",
+  "1155": "--port requires a valid port number (0-65535), got: %s",
+  "1156": "--experimental-project requires a directory argument"
 }
