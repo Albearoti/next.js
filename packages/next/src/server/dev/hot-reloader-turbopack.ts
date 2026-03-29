@@ -380,6 +380,12 @@ export async function createHotReloaderTurbopack(
     opts.nextConfig.turbopack?.root ||
     opts.nextConfig.outputFileTracingRoot ||
     projectPath
+  // Connect to daemon if socket path is provided via environment
+  const daemonSocketPath = process.env.NEXT_TURBOPACK_DAEMON_SOCKET
+  const daemon = daemonSocketPath
+    ? await bindings.turbo.connectTurbopackDaemon(daemonSocketPath)
+    : undefined
+
   const project = await bindings.turbo.createProject(
     {
       rootPath,
@@ -422,7 +428,9 @@ export async function createHotReloaderTurbopack(
     {
       memoryLimit: opts.nextConfig.experimental?.turbopackMemoryLimit,
       isShortSession: false,
-    }
+    },
+    undefined,
+    daemon
   )
   backgroundLogCompilationEvents(project, {
     eventTypes: [
