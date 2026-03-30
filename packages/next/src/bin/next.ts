@@ -223,6 +223,9 @@ program
       'Internal: connect to turbopack daemon'
     ).hideHelp()
   )
+  // --experimental-project flags are parsed manually by getProjectGroups()
+  // before Commander sees them, so we must allow unknown options here.
+  .allowUnknownOption()
   .action((directory: string, options: NextBuildOptions) => {
     if (options.debugPrerender) {
       // @ts-expect-error not readonly
@@ -377,6 +380,9 @@ program
       'Internal: connect to turbopack daemon'
     ).hideHelp()
   )
+  // --experimental-project flags are parsed manually by getProjectGroups()
+  // before Commander sees them, so we must allow unknown options here.
+  .allowUnknownOption()
   .action(
     (directory: string, options: NextDevOptions, { _optionValueSources }) => {
       if (options.experimentalNextConfigStripTypes) {
