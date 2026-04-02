@@ -54,4 +54,4 @@ export const routeModule = new AppPageRouteModule({
 
 export { buildDynamicSegmentPlaceholder, buildCompletedShellCacheKey }
 
-
+export const handler = createHandler(routeModule, entryBase, tree, __next_app__)
